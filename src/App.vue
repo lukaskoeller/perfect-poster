@@ -12,6 +12,11 @@
   --primary-color: hsl(256, 71%, 14%);
   --primary-color-lighten-1: hsl(256, 71%, 18%);
   --primary-color-lighten-2: hsl(256, 71%, 22%);
+  --primary-color-lighten-3: hsl(256, 71%, 26%);
+  --primary-color-lighten-4: hsl(256, 71%, 30%);
+  --primary-color-lighten-5: hsl(256, 71%, 34%);
+  --primary-color-lighten-6: hsl(256, 71%, 38%);
+  --primary-color-lighten-7: hsl(256, 71%, 42%);
   --secondary-color: hsl(223, 80%, 39%);
   --highlight-color: hsl(22, 100%, 43%);
   --text-color: hsl(256, 100%, 93%);
@@ -31,9 +36,20 @@
 
   /* Radii */
   --card-radius: calc(var(--base-spacing) * 4);
+  --input-radius: calc(var(--base-spacing) * 4);
+
+  /* Font Families */
+  --font-family-base: Avenir, Helvetica, Arial, sans-serif;
 
   /* Font Sizes */
   --base-font-size: 16px;
+  --input-font-size: 20px;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
 }
 
 html {
@@ -55,11 +71,11 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 auto;
-  width: fit-content;
+  /* width: fit-content; */
   padding: var(--spacing-2);
 }
 
