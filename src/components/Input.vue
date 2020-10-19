@@ -22,5 +22,26 @@ export default defineComponent({
 <style scoped>
 .input {
   background-color: var(--primary-color-lighten-2);
+  border: none;
+  padding: var(--spacing-6) var(--spacing-4);
+  border-radius: var(--input-radius);
+
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--input-font-size);
+  color: var(--text-size);
+
+  box-shadow: inset 0px 0px 0px 2px var(--primary-color-lighten-6);
+
+  width: 100%;
+  text-align: center;
+}
+
+.input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: var(--primary-color-lighten-7);
 }
 </style>
