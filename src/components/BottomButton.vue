@@ -35,5 +35,7 @@ export default defineComponent({
   color: var(--text-color);
   text-decoration: none;
   border: none;
+
+  font-size: var(--base-font-size);
 }
 </style>
