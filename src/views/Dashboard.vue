@@ -10,7 +10,7 @@ import { defineComponent } from 'vue';
 import GameLink from '@/components/GameLink.vue';
 
 export default defineComponent({
-  name: 'Dasboard',
+  name: 'Dashboard',
   components: {
     GameLink,
   },
