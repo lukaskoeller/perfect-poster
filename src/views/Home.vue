@@ -6,7 +6,7 @@
     </Card>
     <BottomNav>
       <BottomButton to="/join">Join Game</BottomButton>
-      <BottomButton to="/new">New Game</BottomButton>
+      <BottomButton to="/dashboard">New Game</BottomButton>
     </BottomNav>
   </div>
 </template>
