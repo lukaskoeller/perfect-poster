@@ -20,7 +20,11 @@ export default defineComponent({
       const wss = new WebSocket('ws://localhost:8081');
 
       wss.onopen = () => {
-        wss.send(`Message from client at ${new Date().toISOString()}`);
+        wss.send('newSession');
+      };
+
+      wss.onmessage = (event) => {
+        console.log(JSON.parse(event.data));
       };
     });
   },
