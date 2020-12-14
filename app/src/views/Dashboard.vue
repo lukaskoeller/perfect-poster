@@ -14,9 +14,9 @@ export default defineComponent({
   components: {
     GameLink,
   },
-  connect() {
+  setup() {
     onMounted(() => {
-      console.log('connect to websocket');
+      console.log('Connect to websocket');
       const wss = new WebSocket('ws://localhost:8081');
 
       wss.onopen = () => {
