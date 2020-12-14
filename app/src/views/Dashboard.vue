@@ -20,7 +20,7 @@ export default defineComponent({
       const wss = new WebSocket('ws://localhost:8081');
 
       wss.onopen = () => {
-        wss.send('Here\'s some text that the server is urgently awaiting!');
+        wss.send(`Message from client at ${new Date().toISOString()}`);
       };
     });
   },
