@@ -19,6 +19,7 @@ export default defineComponent({
 <style scoped>
 .card {
   width: min(600px, 100%);
+  margin: var(--spacing-3) auto;
   padding: var(--spacing-5);
   background-color: var(--primary-color-lighten-2);
   border-radius: var(--card-radius);
