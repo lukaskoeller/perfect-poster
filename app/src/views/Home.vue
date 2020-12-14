@@ -2,27 +2,25 @@
   <div class="home">
     <h1>Caramba! Welcome to perfect poster 👋</h1>
     <Card>
-      <h2>🧑‍🎨 Card Component</h2>
+      <h2>Join Game</h2>
+      <Input placeholder="Enter ID" />
     </Card>
-    <BottomNav>
-      <BottomButton to="/join">Join Game</BottomButton>
-      <BottomButton to="/dashboard">New Game</BottomButton>
-    </BottomNav>
+    <Button fullWidth="true">New Game</Button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Card from '@/components/Card.vue'; // @ is an alias to /src
-import BottomNav from '@/components/BottomNav.vue';
-import BottomButton from '@/components/BottomButton.vue';
+import Input from '@/components/Input.vue';
+import Button from '@/components/Button.vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
     Card,
-    BottomNav,
-    BottomButton,
+    Input,
+    Button,
   },
 });
 </script>
