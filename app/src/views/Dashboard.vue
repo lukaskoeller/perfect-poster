@@ -6,13 +6,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import GameLink from '@/components/GameLink.vue';
 
 export default defineComponent({
   name: 'Dashboard',
   components: {
     GameLink,
+  },
+  connect() {
+    onMounted(() => {
+      console.log('connect to websocket');
+      const wss = new WebSocket('ws://localhost:8081');
+
+      wss.onopen = () => {
+        wss.send('Here\'s some text that the server is urgently awaiting!');
+      };
+    });
   },
 });
 </script>
