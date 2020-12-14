@@ -1,19 +1,15 @@
-console.log("Welcome to perfect poster!");
+import WebSocket from 'ws';
 
-import cors from 'cors';
-import express from 'express';
+const PORT = 8081;
 
-const app = express();
-const port = 3000;
+const wss = new WebSocket.Server({ port: PORT });
 
-app.use(cors());
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json());
+wss.on('connection', function connection(ws) {
+  console.log(`Connected to websocket.`);
 
-app.get('/newgame', (req, res) => {
-    console.log('Send all services');
-});
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+  });
 
-app.listen(port, () => {
-    console.log(`perfect poster listening at http://localhost:${port}`);
+  ws.send('something');
 });
