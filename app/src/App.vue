@@ -19,7 +19,8 @@
   --primary-color-lighten-7: hsl(256, 71%, 42%);
   --secondary-color: hsl(223, 80%, 39%);
   --highlight-color: hsl(22, 100%, 43%);
-  --text-color: hsl(256, 100%, 93%);
+  --light-color: hsl(256, 100%, 93%);
+  --text-color: var(--light-color);
 
   /* Spacing */
   --base-spacing: 4px;
@@ -37,6 +38,7 @@
   /* Radii */
   --card-radius: calc(var(--base-spacing) * 4);
   --input-radius: calc(var(--base-spacing) * 4);
+  --button-radius: calc(var(--base-spacing) * 4);
 
   /* Font Families */
   --font-family-base: Avenir, Helvetica, Arial, sans-serif;
@@ -44,12 +46,16 @@
   /* Font Sizes */
   --base-font-size: 16px;
   --input-font-size: 20px;
+  --button-font-size: 20px;
 
   /* Font Weights */
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 600;
+
+  /* Transitions */
+  --transition: 0.25s ease;
 }
 
 html {
@@ -79,7 +85,13 @@ body {
   padding: var(--spacing-2);
 }
 
+/* Light Theme */
 /* [data-theme="light"] {
 
 } */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  margin-bottom: var(--spacing-1);
+}
 </style>
