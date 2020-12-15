@@ -5,7 +5,7 @@
       <h2>Join Game</h2>
       <Input placeholder="Enter ID" />
     </Card>
-    <Button fullWidth="true">New Game</Button>
+    <Button fullWidth="true">New Game 13</Button>
   </div>
 </template>
 
