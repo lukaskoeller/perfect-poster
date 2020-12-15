@@ -19,13 +19,16 @@
 import { defineComponent, computed } from 'vue';
 
 export default defineComponent({
-  name: 'Button',
+  name: 'MainButton',
   props: {
     to: {
       required: false,
       default: '',
     },
-    fullWidth: { required: false },
+    fullWidth: {
+      required: false,
+      type: Boolean,
+    },
   },
   setup(props) {
     const type = computed(() => (props.to ? 'router-link' : 'button'));
@@ -61,6 +64,9 @@ export default defineComponent({
 }
 
 .full-width {
-  width: 100%;
+  width: min(600px, 100%);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
