@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 
 export default defineComponent({
   name: 'BottomButton',
@@ -14,13 +14,12 @@ export default defineComponent({
       required: false,
     },
   },
-  computed: {
-    type() {
-      if (this.to) {
-        return 'router-link';
-      }
-      return 'button';
-    },
+  setup(props) {
+    const type = computed(() => (props.to ? 'router-link' : 'button'));
+
+    return {
+      type,
+    };
   },
 });
 </script>
