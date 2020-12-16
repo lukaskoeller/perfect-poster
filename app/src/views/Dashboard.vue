@@ -17,7 +17,7 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       console.log('Connect to websocket');
-      const wss = new WebSocket('ws://localhost:8081');
+      const wss = new WebSocket('ws://localhost:8082');
 
       wss.onopen = () => {
         wss.send('newSession');
