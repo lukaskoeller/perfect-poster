@@ -1,23 +1,38 @@
+import express from 'express';
+import cors from 'cors';
 import WebSocket from 'ws';
 import { v4 as uuidv4 } from 'uuid';
 
-const PORT = 8081;
+const URL = 'http://localhost';
+const APP_PORT = 8081;
+const WSS_PORT = 8082;
 
-const wss = new WebSocket.Server({ port: PORT });
+const app = express();
+const wss = new WebSocket.Server({ port: WSS_PORT });
 
 let sessions = [];
 
+app.use(cors());
+app.listen(APP_PORT, () => {
+  console.log(`APP is listening at http://localhost:${APP_PORT}`);
+});
+
+app.get('/join/:id', (req, res) => {
+  console.log(`Try to join session ${req.params.id}`);
+  console.log(sessions.find((session) => session.id === req.params.id ));
+});
+
 /**
  * newGame
- * @param {string} sessionId
+ * @param {string} id
  */
-const newGame = (sessionId) => {
+const newGame = (id) => {
   const gameId = uuidv4();
 
-  console.log(`Game ID: ${gameId}\nSession ID: ${sessionId}`);
+  console.log(`Game ID: ${gameId}\nSession ID: ${id}`);
 
   return {
-    gameId,
+    id,
     players: [],
   }
 };
@@ -26,11 +41,11 @@ const newGame = (sessionId) => {
  * newSession
  */
 const newSession = () => {
-  const sessionId = uuidv4();
+  const id = uuidv4();
 
   const session = {
-    sessionId,
-    games: newGame(sessionId),
+    id,
+    games: [],
   };
 
   sessions.push(session);
